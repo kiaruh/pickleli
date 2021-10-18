@@ -11,8 +11,8 @@ function Nav(){
             <ul>
                 <li><Navlink tittle = 'Inicio'/></li>
                 <li><Navlink tittle = 'Favorito'/></li>
-                <li><Navlink tittle = 'Registrar'/></li>
-                <li><Navlink tittle = 'Contacto'/></li>
+                <li><a href="#"><span className="material-icons">shopping_cart</span></a></li>
+                <li><Navlink tittle ='Bienvenido' /><a href="#"><span className="material-icons">account_circle</span></a></li>
             </ul>
         </nav>
     )
