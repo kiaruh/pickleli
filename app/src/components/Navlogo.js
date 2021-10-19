@@ -5,7 +5,7 @@ function Navlogo(){
 
 
     return(
-        <a href="#"><img src={logo} alt="" /></a>
+        <a href="{#}"><img src={logo} alt="" /></a>
     )
 }
 
