@@ -2,7 +2,7 @@ import Navlink from './Navlink'
 import Navlogo from './Navlogo'
 import '../assets/css/navbar.css'
 
-function Nav(){
+function Navbar(){
 
 
     return(
@@ -17,4 +17,4 @@ function Nav(){
         </nav>
     )
 }
-export default Nav
+export default Navbar
