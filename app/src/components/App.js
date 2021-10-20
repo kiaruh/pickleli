@@ -1,12 +1,12 @@
 import Header from './Header'
-import ItemListContainer from './ItemListContainer'
+import Main from './Main'
 import Footer from './Footer'
 
 function App() {
   return (
     <>
       <Header/>
-      <ItemListContainer/>
+      <Main/>
       <Footer/>
     </>
   )
