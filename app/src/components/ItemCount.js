@@ -24,6 +24,7 @@ function ItemCount({stock,inicial}) {
             <button className='material-icons' onClick={sumarContador}>add</button>
             <p>{cantidad}</p>
             <button className='material-icons' onClick={restarContador}>remove</button>
+            <p>stock disponible: {stock}</p>
         </fieldset>
     )
 

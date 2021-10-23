@@ -1,21 +1,21 @@
-import Product from "./Product"
-import tv from "../assets/img/tv.jpg"
-import mac from "../assets/img/mac.jpg"
-import celu from "../assets/img/celu.jpg"
-import cafe from "../assets/img/cafe.jpg"
+import { useEffect , useState } from "react"
+import db from "./db.json"
+import ItemList from "./ItemList"
+   
 
-function Main(props){
+export default function Main(props){
 
+    const [products, setProducts] = useState([])
 
+    useEffect(() => { setTimeout(() => {setProducts(db)}, 2000)},[])
+
+    if (products.length === 0) {
+        return <p>Cargando Productos... </p>}
+    
+    console.log(products)
     return(
         <main>
-            <Product name="Start TV" qty={5} initialstock={1} pic={tv} />
-            <Product name="Smartphone" qty={10} initialstock={1} pic={celu} />
-            <Product name="Cafetera" qty={15} initialstock={1} pic={cafe} />
-            <Product name="Macbook Pro" qty={6} initialstock={1} pic={mac} />
-
+            {products.map((e,i)=> <ItemList key={e+i} name={e.name} price={e.price} qty={e.qty} initialstock={e.initialstock} pic={e.img}  />)}
         </main>
     )
-}
-
-export default Main
+    }

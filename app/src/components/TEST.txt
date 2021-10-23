@@ -1,0 +1,36 @@
+import "./styles.css";
+import { useEffect, useState } from "react";
+
+export default function App() {
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setUsuarios([
+        { id: 1, nombre: "horacio", img: "http://placehold.it/100x100" },
+        { id: 2, nombre: "juan", img: "http://placehold.it/00x100" },
+        { id: 3, nombre: "carlos", img: "http://placehold.it/100x100" }
+      ]);
+    }, 3000);
+  }, []);
+
+  if (usuarios.length === 0) {
+    return <p>Loading </p>;
+  } else {
+    return (
+      <div className="App">
+        <h1>Hello CodeSandbox</h1>
+        {usuarios.map((e, i) => {
+          return (
+            <>
+              <p key={e.id}>{e.nombre}</p>
+              <img key={e.id} alt='img' src={e.img}/>
+            </>
+          );
+        })}
+      </div>
+    );
+  }
+}
+
+//Warning: Each child in a list should have a unique "key" prop.
