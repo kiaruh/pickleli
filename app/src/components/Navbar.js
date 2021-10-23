@@ -1,6 +1,6 @@
 import Navlink from './Navlink'
 import Navlogo from './Navlogo'
-import '../assets/css/navbar.css'
+import './assets/css/navbar.css'
 
 function Navbar(){
 
