@@ -1,14 +1,29 @@
+import { useEffect , useState } from "react"
+import ItemList from "./ItemList"
+import db from './db.json'
+function ItemListContainer(props){
 
+    const [products, setProducts] = useState([])
 
-function ItemListContainer(){
+    //http://localhost:3001/products
+    //https://api-pickle.herokuapp.com/products
+    // const obtenerData = async() => {
+    //     const data = await fetch('https://api-pickle.herokuapp.com/products')
+    //     const datajson = await data.json()
+    //     return datajson
+    //  }
+    // console.log(obtenerData)
+    //setTimeout(() => { setProducts(obtenerData)}, 2000)
+    useEffect(() => {setTimeout(() => { setProducts(db)}, 2000)},[])
+
+    if (products.length === 0) {
+        return <p>Cargando Productos... </p>}
 
 
     return (
-        <ul>
-            <li><h2>Catalogo</h2></li>
-            <li>cosas 1</li>
-            <li>cosas 2</li>
-        </ul>
+        <div className='ProductList'>
+            {products.map((e,i)=> <ItemList key={e+i} name={e.name} price={e.price} qty={e.qty} initialstock={e.initialstock} pic={e.img}  />)}
+        </div>
     )
 }
 export default ItemListContainer
