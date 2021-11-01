@@ -5,7 +5,7 @@ nav{
     flex-direction: row;
     justify-content: space-evenly;
 }
-a{
+nav a{
     color: antiquewhite;
     font-style: normal;
     text-decoration: none;

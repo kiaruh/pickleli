@@ -1,10 +1,16 @@
+import ItemCount from "../itemCount/ItemCount"
 
-
-const ItemDetail = ({detail}) => {
+const ItemDetail = ({name,qty,initialstock,price,pic,detail}) => {
     return (
-        <p>
-            {detail}
-        </p>
+        <div>
+            <picture> <img src={pic} alt="" /></picture>
+            <p>{name}</p>
+            <p>${price}</p>
+            <ItemCount stock={qty} inicial={initialstock} />
+            <button>Agregar a carrito</button>
+            <button>Mas del producto</button>
+            <p>{detail}</p>
+        </div>
     )
 }
 

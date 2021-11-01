@@ -1,5 +1,4 @@
 import ItemListContainer from "../../itemList/ItemListContainer"
-import  ItemDetailContainer from "../../itemDetail/ItemDetailContainer"
    
 
 function Main(props){
@@ -7,7 +6,6 @@ function Main(props){
     return(
         <main>
             <ItemListContainer/>
-            <ItemDetailContainer/>
         </main>
     )
     }
