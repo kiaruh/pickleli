@@ -1,13 +1,19 @@
 import { useEffect , useState } from "react"
 import ItemDetail from "./ItemDetail"
-import db from './db.json'
+
 
 
 const ItemDetailContainer = () => {
     const [details, setDetails] = useState([])
 
+    const obtenerData = async () => {
+        const data = await fetch('https://api-pickle.herokuapp.com/products')
+        const datajson = await data.json()
+        console.log(datajson)
+        setDetails(datajson)
+     }
     
-    useEffect(() => { setTimeout(() => { setDetails(db)}, 2000) }, [])
+     useEffect(()=>{obtenerData()},[])
 
     if (details.length === 0) {
         return <p>Cargando detalles... </p>}

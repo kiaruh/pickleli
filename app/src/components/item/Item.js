@@ -1,4 +1,4 @@
-import ItemCount from './ItemCount';
+import ItemCount from '../itemCount/ItemCount';
 
 function Item({name,qty,initialstock,price,pic}){
 

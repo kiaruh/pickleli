@@ -1,21 +1,16 @@
 import { useEffect , useState } from "react"
 import ItemList from "./ItemList"
-//import db from './db.json'
+
 function ItemListContainer(props){
 
     const [products, setProducts] = useState([])
 
-    //http://localhost:3001/products
-    //https://api-pickle.herokuapp.com/products
     const obtenerData = async () => {
         const data = await fetch('https://api-pickle.herokuapp.com/products')
         const datajson = await data.json()
         console.log(datajson)
         setProducts(datajson)
      }
-    // console.log(obtenerData)
-    //setTimeout(() => { setProducts(obtenerData)}, 2000)
-    //then (data => { setProducts(data)}) agregar return
 
     useEffect(()=>{obtenerData()},[])
 
