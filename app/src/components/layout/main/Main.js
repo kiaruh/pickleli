@@ -1,8 +1,8 @@
 import ItemListContainer from "../../itemList/ItemListContainer"
-import  ItemDetailContainer from "../../itemDeatail/ItemDetailContainer"
+import  ItemDetailContainer from "../../itemDetail/ItemDetailContainer"
    
 
-export default function Main(props){
+function Main(props){
 
     return(
         <main>
@@ -11,3 +11,5 @@ export default function Main(props){
         </main>
     )
     }
+
+export default Main
