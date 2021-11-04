@@ -12,7 +12,7 @@ const ItemDetailContainer = (props) => {
 
     useEffect(()=>{
         const obtenerData = async () => {
-            const data = await fetch(`http://localhost:3001/products/${id}`)
+            const data = await fetch(`https://api-pickle.herokuapp.com/products/${id}`)
             const datajson = await data.json()
             setDetails(datajson)
          };

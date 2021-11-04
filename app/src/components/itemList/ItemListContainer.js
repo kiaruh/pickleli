@@ -10,7 +10,7 @@ function ItemListContainer(props){
 
     useEffect(()=>{
         const obtenerData = async () => {
-            const data = await fetch(`http://localhost:3001/products`)
+            const data = await fetch(`https://api-pickle.herokuapp.com/products`)
             const datajson = await data.json()
             setProducts(datajson)
          };

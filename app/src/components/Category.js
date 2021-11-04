@@ -11,7 +11,7 @@ function Category(props){
     //`https://api-pickle.herokuapp.com/products?category=${id}`
     useEffect(()=>{
         const obtenerData = async () => {
-            const data = await fetch(`http://localhost:3001/products?category=${id}`)
+            const data = await fetch(`https://api-pickle.herokuapp.com/products?category=${id}`)
             const datajson = await data.json()
             setProducts(datajson)
          };
