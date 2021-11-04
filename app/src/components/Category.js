@@ -1,4 +1,4 @@
-import { useEffect , useState } from "react"
+import React,{ useEffect , useState } from "react"
 import ItemList from "./itemList/ItemList"
 import { useParams } from "react-router"
 import { NavLink } from "react-router-dom"
@@ -7,16 +7,15 @@ function Category(props){
 
     const [products, setProducts] = useState([])
     const { id } = useParams()
-    var url = `https://api-pickle.herokuapp.com/products?category=${id}`
-
-    const obtenerData = async () => {
-        const data = await fetch(url)
-        const datajson = await data.json()
-        console.log(datajson)
-        setProducts(datajson)
-     }
-
-    useEffect(()=>{obtenerData()},)
+    //`http://localhost:3001/products?category=${id}`
+    //`https://api-pickle.herokuapp.com/products?category=${id}`
+    useEffect(()=>{
+        const obtenerData = async () => {
+            const data = await fetch(`http://localhost:3001/products?category=${id}`)
+            const datajson = await data.json()
+            setProducts(datajson)
+         };
+        obtenerData()},[id])
 
     if (products.length === 0) {
         return <p>Cargando Productos... </p>}
@@ -25,7 +24,7 @@ function Category(props){
     return (
         <div className='ProductList'>
             <h2>Categoria: {id}</h2>
-            {products.map((e,i)=> <NavLink to={'/producto/'+e.id} > <ItemList key={e+i} id={e.id} name={e.name} price={e.price} qty={e.qty} initialstock={e.initialstock} pic={e.img} /></NavLink>)}
+            {products.map((e,i)=> <NavLink key={e+i} to={'/producto/'+e.id} > <ItemList id={e.id} name={e.name} price={e.price} qty={e.qty} initialstock={e.initialstock} pic={e.img} /></NavLink>)}
         </div>
     )
 }

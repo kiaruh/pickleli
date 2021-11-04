@@ -1,8 +1,9 @@
+import React from "react"
 import ItemCount from "../itemCount/ItemCount"
 
 const ItemDetail = ({name,qty,initialstock,price,pic,detail}) => {
     return (
-        <div>
+        <div className="Detail-Container">
             <picture> <img src={pic} alt="" /></picture>
             <p>{name}</p>
             <p>${price}</p>

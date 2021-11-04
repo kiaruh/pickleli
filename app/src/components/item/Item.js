@@ -1,3 +1,4 @@
+import React from "react"
 import ItemCount from '../itemCount/ItemCount';
 
 function Item({name,qty,initialstock,price,pic}){

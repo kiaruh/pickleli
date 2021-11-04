@@ -1,11 +1,11 @@
-
-
+import React from "react"
+import logo from "../../assets/logo.png"
 function Navlogo(){
 
 
 
     return(
-        <a href="/"><img className='navlogo' src="/img/picklelogo.jpg" alt="" /></a>
+        <img className='navlogo' src={logo} alt="" />
     )
 }
 
