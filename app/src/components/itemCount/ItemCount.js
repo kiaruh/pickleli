@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Button, TableCell } from '@mui/material'
 
 function ItemCount({stock,inicial}) {
 
@@ -20,12 +21,12 @@ function ItemCount({stock,inicial}) {
     }
 
     return(
-        <fieldset>
-            <button className='material-icons' onClick={sumarContador}>add</button>
+        <TableCell>
+            <Button variant='contained' className='material-icons' onClick={sumarContador}>+</Button>
             <p>{cantidad}</p>
-            <button className='material-icons' onClick={restarContador}>remove</button>
+            <Button variant='contained' className='material-icons' onClick={restarContador}>-</Button>
             <p>stock disponible: {stock}</p>
-        </fieldset>
+        </TableCell>
     )
 
     }

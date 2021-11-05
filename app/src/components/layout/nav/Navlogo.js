@@ -5,7 +5,7 @@ function Navlogo(){
 
 
     return(
-        <img className='navlogo' src={logo} alt="" />
+        <img className='navlogo' src={logo} alt="" style={{width:'70px', height:'34px'}}/>
     )
 }
 

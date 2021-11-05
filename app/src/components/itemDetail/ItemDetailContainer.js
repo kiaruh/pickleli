@@ -2,6 +2,7 @@ import React, { useEffect , useState } from "react"
 import ItemDetail from "./ItemDetail"
 import { useParams } from "react-router"
 import './itemDetail.css'
+import { TableContainer, Table, TableBody } from '@mui/material'
 
 const ItemDetailContainer = (props) => {
     
@@ -22,9 +23,15 @@ const ItemDetailContainer = (props) => {
         return <p>Cargando detalles... </p>}
 
     return (
-        <div className='Detail'>
+        <TableContainer>
+                <Table>
+                    <TableBody>
+                        
             <ItemDetail name={details.name} qty={details.qty} initialstock={details.initialstock} price={details.price} pic={details.img} detail={details.description} />
-        </div>
+                       
+                    </TableBody>
+                </Table>    
+        </TableContainer>
     )
 }
 

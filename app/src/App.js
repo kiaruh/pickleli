@@ -8,10 +8,17 @@ import ItemListContainer from './components/itemList/ItemListContainer'
 import Category from './components/Category'
 import Error from './components/Error'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Container from '@mui/material/Container'
+
+
 
 function App() {
+
+
+
   return (
     <BrowserRouter>
+    <Container>
       <Header/>
           <Switch>
             <Route exact path="/" component={Main} />
@@ -22,6 +29,7 @@ function App() {
             <Route component={Error}/>
           </Switch>
       <Footer/>
+      </Container>
       </BrowserRouter>
   )
 }

@@ -1,17 +1,19 @@
 import React from "react"
 import ItemCount from '../itemCount/ItemCount';
+import { Button, TableCell } from '@mui/material'
+
 
 function Item({name,qty,initialstock,price,pic}){
 
     return(
-        <>
-            <picture> <img src={pic} alt="" /></picture>
-            <p>{name}</p>
-            <p>${price}</p>
+        <TableCell>
+            <picture> <img style={{width:'240px', height:'300px', borderRadius:'25px'}} src={pic} alt="" /></picture>
+            <h2>{name}</h2>
+            <h3>${price}</h3>
             <ItemCount stock={qty} inicial={initialstock} />
-            <button>Agregar a carrito</button>
-            <button>Mas del producto</button>
-        </>
+            <Button>Agregar a carrito</Button>
+            <Button>Mas del producto</Button>
+        </TableCell>
 
     )
 
