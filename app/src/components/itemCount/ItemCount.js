@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { NavLink } from 'react-router-dom'
 import { Button, TableCell } from '@mui/material'
 
 function ItemCount({stock,inicial,onAdd}) {
@@ -27,6 +28,7 @@ function ItemCount({stock,inicial,onAdd}) {
             <Button variant='contained' className='material-icons' onClick={restarContador}>-</Button>
             <p>stock disponible: {stock}</p>
             <Button onClick={()=> onAdd(cantidad)}>Agregar a carrito</Button>
+            <Button to='/cart' component={NavLink}> check out</Button>
         </TableCell>
     )
 
