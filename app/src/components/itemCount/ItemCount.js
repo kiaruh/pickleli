@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Button, TableCell } from '@mui/material'
 
-function ItemCount({stock,inicial}) {
+function ItemCount({stock,inicial,onAdd}) {
 
     const [cantidad, setCantidad] = useState(inicial)
 
@@ -26,6 +26,7 @@ function ItemCount({stock,inicial}) {
             <p>{cantidad}</p>
             <Button variant='contained' className='material-icons' onClick={restarContador}>-</Button>
             <p>stock disponible: {stock}</p>
+            <Button onClick={()=> onAdd(cantidad)}>Agregar a carrito</Button>
         </TableCell>
     )
 
