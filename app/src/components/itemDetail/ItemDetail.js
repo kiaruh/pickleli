@@ -1,9 +1,18 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
 import ItemCount from "../itemCount/ItemCount"
 import { Card } from '@mui/material'
+import { context } from "../../context/CartContext"
 
-const ItemDetail = ({name,qty,initialstock,price,pic,detail}) => {
+const ItemDetail = ({id,name,qty,initialstock,price,pic,detail}) => {
     const [count, setCount] = useState(0)
+    const producto = {id,name,price,pic}
+    const { addProduct } = useContext(context)
+
+    if(!count){
+        addProduct(producto,count)
+    }
+    
+    
 
     return (
         <>
